@@ -1,0 +1,76 @@
+<html ng-app="masterchefmarocApp">
+    <head>
+        <meta charset="utf-8" />
+      
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css">
+        <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>MasterChef MAROC</title>
+</head>
+    <body>
+        <section ng-controller="NavCtrl">
+            <nav class="menu slide-menu-left center">
+                <img class="logo" src="img/logomcm.png" width="100">
+                <div class="menu-title"><a class="fa fa-bars" href="#"> MENU</a></div>
+                <ul>
+                    <li ng-class="{active: page == 'home'}"> <a class="fa fa-home" ng-click="buttonClicked('home')" href="#home"> Accueil </a></li>
+                    <li ng-class="{active: page == 'videos'}"> <a class="fa fa-play-circle" ng-click="buttonClicked('videos')" href="#videos"> Videos</a></li>
+                    <li ng-class="{active: page == 'recettes'}"> <a class="fa fa-cutlery" ng-click="buttonClicked('recettes')" href="#recettes"> Recettes</a></li>
+                    <li ng-class="{active: page == 'candidats'}"> <a class="fa fa-users" ng-click="buttonClicked('candidats')" href="#candidats"> Candidats</a></li>
+                    <li ng-class="{active: page == 'jury'}"> <a class="fa fa-user" ng-click="buttonClicked('jury')" href="#jury"> Jury</a></li>
+                    <li ng-class="{active: page == 'photos'}"> <a class="fa fa-picture-o" ng-click="buttonClicked('photos')" href="#photos"> Photos</a></li>
+                    <li ng-class="{active: page == 'quiz'}"> <a class="fa fa-question-circle" ng-click="buttonClicked('quiz')" href="#quiz"> Quiz</a></li>
+                    <li ng-class="{active: page == 'about'}"> <a class="fa fa-exclamation-circle" ng-click="buttonClicked('about')" href="#about"> A propos</a></li>
+                </ul>
+                <div class="menu-title"><a class="fa fa-youtube-play" href="#"> LIVE</a></div>
+                <ul>   
+                    <li ng-class="{active: page == 'live'}"> <a class="fa fa-comments" ng-click="buttonClicked('live')" href="#live"> ESPACE LIVE</a></li>
+                </ul>
+                <div class="menu-title"><a class="fa fa-share-alt" href="#"> SOCIAL</a></div>
+                <ul>
+                    <li> <a class="fa fa-facebook-square" href="#"> Facebook </a></li>
+                    <li> <a class="fa fa-twitter-square" href="#"> Twitter </a></li>
+                    <li> <a class="fa fa-google-plus-square" href="#"> Google+ </a></li>
+                    <li> <a class="fa fa-youtube-square" href="#"> Youtube </a></li>
+
+                </ul>
+
+                <div align="center" class="masterchefmaroc"><a><font size="2">© 2014 MasterChef Maroc</font></a></div>
+            </nav>
+
+            <section class="app-body" ng-class="{center: collapse == 1, midright: collapse == 0}">
+                <header class="header">
+                    <button class="menu-btn open" ng-click="openClicked()"><i class="fa fa-bars fa-2x"></i></button>
+                    <img class="main-logo" src="img/icon.png" height="50">
+                    <button class="menu-btn refresh" ng-click="refreshClicked()"><i class="fa fa-refresh fa-2x"></i></button>
+                </header>
+            
+                <section class="view" ng-view hm-swipe-right="openMenu()" hm-swipe-left="closeMenu()" hm-touch="closeMenu()"> 
+
+                </section>
+            </section>
+        </section>
+        <script type="text/javascript" src="cordova.js"></script>    
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/fastclick.js"></script>
+        <script type="text/javascript" src="js/jquery.plugin.js"></script>
+        <script type="text/javascript" src="js/jquery.countdown.js"></script>
+        <script type="text/javascript" src="js/jquery.countdown-fr.js"></script>
+        <script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
+
+        <script type="text/javascript" src="js/angular12/angular.js"></script>
+        <script type="text/javascript" src="js/angular12/angular-touch.js"></script>
+        <script type="text/javascript" src="js/angular12/angular-route.js"></script>
+        <script type="text/javascript" src="js/angular12/gestures.js"></script>
+        
+
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/controller/NavCtrl.js"></script>
+        <script type="text/javascript" src="js/controller/JuryCtrl.js"></script>
+        <script type="text/javascript" src="js/controller/HomeCtrl.js"></script>
+    </body>
+</html>

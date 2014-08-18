@@ -1,0 +1,17 @@
+<section class="jury-panel panel" ng-controller="JuryCtrl">
+  <div class="row panel-padding">
+  	<div class="jury" ng-class="{active: j.id == selectedjury.id}" ng-repeat="j in jurys">
+       <img src="{{ j.image }}" width="100%" ng-click="setSelected(j.id)"> 
+  	</div>
+    <div class="j_title" ng-repeat="j in jurys">
+        <div align="center">{{ j.nom }}</div>
+    </div>
+
+  </div>
+
+  <div class="jury-img panel-padding">
+    <img src="{{selectedjury.image}}">
+  </div>
+    
+  <div class="jury-desc panel-padding">{{selectedjury.description}}</div>
+</section>
